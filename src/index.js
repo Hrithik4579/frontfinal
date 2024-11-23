@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+window.addEventListener("error", (event) => {
+  if (event.message.includes("WebSocket connection to")) {
+    event.preventDefault();
+  }
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
